@@ -14,12 +14,12 @@ pub fn build(b: *std.build.Builder) void {
     const exe = b.addExecutable("sfml-zig-template", "src/main.zig");
     exe.linkLibC();
     exe.addPackagePath("sfml", "zig-sfml-wrapper/src/sfml/sfml.zig");
-    exe.addLibPath("csfml/lib/msvc/");
+    exe.addLibraryPath("csfml/lib/msvc/");
     exe.linkSystemLibrary("csfml-graphics");
     exe.linkSystemLibrary("csfml-system");
     exe.linkSystemLibrary("csfml-window");
     exe.linkSystemLibrary("csfml-audio");
-    exe.addIncludeDir("csfml/include/");
+    exe.addIncludePath("csfml/include/");
     exe.setTarget(target);
     exe.setBuildMode(mode);
     exe.install();
