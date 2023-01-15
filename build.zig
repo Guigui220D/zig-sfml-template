@@ -13,7 +13,6 @@ pub fn build(b: *std.build.Builder) void {
     const mode = b.standardReleaseOptions();
 
     const exe = b.addExecutable("sfml-zig-template", "src/main.zig");
-    exe.linkLibC();
     exe.addPackage(sfml.pkg("sfml"));
     sfml.link(exe);
     exe.setTarget(target);
